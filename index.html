@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PCD FSV</title>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <!--<link href="bower_components/bootstrap/dist/css/bootstrap-theme.css.map" rel="stylesheet"/>-->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/chart.js/dist/Chart.min.js"></script>
+    <script src="bower_components/numjs/dist/numjs.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Tugas Besar Pengelolaan Citra Digital</h1>
+            <p>Oleh Isa Setiawan Abdurrazaq (1301140047)</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div style="float: none; margin: 0 auto;" align="center" class="col-md-4">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+    <div class="row">
+        <div style="float: none; margin: 0 auto;" class="col-md-4">
+            <input type="file" id="image" onchange="openfile(this)">
+        </div>
+    </div>
+    
+    <div class="row">
+        <div style="float: none; margin: 0 auto;" align="center" class="col-md-4">
+            <input placeholder="nilai untuk operasi" type="number" class="form-control" id="val">
+        </div>
+    </div>
+
+    <div class="row">
+        <div align="center" class="col-md-12">
+            <p>Operasi Dasar</p>
+            <div class="btn-group btn-group">
+                <button id="btnClear" class="btn btn-primary">Bersihkan</button>
+                <button id="btnZoom" class="btn btn-primary">Ubah Ukuran</button>
+                <button id="btnflipx" class="btn btn-primary">Balik Vertikal</button>
+                <button id="btnflipy" class="btn btn-primary">Balik Horizontal</button>
+                <button id="btnrot" class="btn btn-primary">Rotasi</button>
+                <button id="btncrop" class="btn btn-primary">Potong</button>                
+
+                <a id="btnsave" href="#" class="btn btn-primary">Simpan</a>                       
+              </div>
+              <span id="ukuran"></span>
+        </div>
+    </div>
+
+    <div class="row">
+            <div align="center" class="col-md-12">
+                <p>Operasi histogram</p>
+                <div class="btn-group btn-group">
+                    <button id="kelabu" class="btn btn-primary">Kelabu</button>
+                    <button id="equali" class="btn btn-primary" disabled="true">Ekualisasi</button>
+                    <button id="spesifi" class="btn btn-primary" disabled="true">Spesifikasi</button>                 
+                    
+                </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div style="float: none; margin: 0 auto;" align="center" class="col-md-4">
+            <canvas style="visibility:hidden" id="histogram" width="800" height="200"></canvas>
+        </div>
+    </div>
+
+    <div class="row">
+        <div align="center" class="col-md-12">
+            <p>Operasi Penyaringan</p>
+            <div class="btn-group btn-group">
+                <button id="mean" class="btn btn-primary">Rata-rata</button>
+                <button id="median" class="btn btn-primary">Median</button>
+                <button id="modus" class="btn btn-primary">Modus</button>
+                <button id="sharp" class="btn btn-primary">Tajamkan</button>
+                <!-- <button id="gaus" class="btn btn-primary">Gaussian</button>                 -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div align="center" class="col-md-12">
+            <p>Deteksi Tepi</p>
+            <div class="btn-group btn-group">
+                <button id="edgedet" disabled="true" class="btn btn-primary" onclick="edgedetection()">Deteksi Tepi</button>              
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div align="center" class="col-md-12">
+            <p>Morfologi</p>
+            <div class="btn-group btn-group">
+                <button id="dilasi" class="btn btn-primary" >Dilasi</button>
+                <button id="erosi" class="btn btn-primary">Erosi</button>               
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="utils.js"></script>
+<script src="app.js"></script>
+
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "tubesPCD",
+  "authors": [
+    "isasetiawan <azaqokay@gmail.com>"
+  ],
+  "description": "untuk memenuhi syarat kuliah PCD",
+  "main": "index.html",
+  "keywords": [
+    "image",
+    "processing"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chart.js": "^2.7.0"
+  }
+}
